@@ -9,7 +9,9 @@ import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Form;
 import javax.microedition.lcdui.Image;
 import javax.microedition.lcdui.ImageItem;
+import javax.microedition.lcdui.StringItem;
 import javax.microedition.midlet.MIDlet;
+import javax.microedition.midlet.MIDletStateChangeException;
 
 import cpBluetooth.CPBluetooth;
 
@@ -23,7 +25,7 @@ public class CrazyPac extends MIDlet implements CommandListener {
 	/**
 	 * Comandos utilizados na interface principal
 	 */
-	private Command comandoSair, comandoOk;
+	private Command comandoSair, comandoOk, comandoBt;
 	/**
 	 * Formulário padrão da interface principal
 	 */
@@ -53,7 +55,7 @@ public class CrazyPac extends MIDlet implements CommandListener {
 		}
 		preencheMainForm();
 		telaPrincipal = Display.getDisplay(this);
-		CPBluetooth.informacoesBlueTooth(mainForm);
+		//CPBluetooth.informacoesBlueTooth(mainForm);
 	}
 
 	/**
@@ -61,9 +63,11 @@ public class CrazyPac extends MIDlet implements CommandListener {
 	 *
 	 */
 	private void adicionaComandos() {
-		comandoSair = new Command("Sair", Command.EXIT, 0);
-		comandoOk = new Command("Jogar", Command.OK, 1);
+		comandoOk = new Command("Jogar", Command.OK, 0);
+		comandoBt = new Command("Bluetooth", Command.OK, 1);
+		comandoSair = new Command("Sair", Command.EXIT, 2);
 		mainForm.addCommand(comandoOk);
+		mainForm.addCommand(comandoBt);
 		mainForm.addCommand(comandoSair);
 		mainForm.setCommandListener(this);
 	}
@@ -157,6 +161,14 @@ public class CrazyPac extends MIDlet implements CommandListener {
 			Tabuleiro tabuleiro = new Tabuleiro(this);
 			tabuleiro.start();
 			setCurrent(tabuleiro);
+		}else if (cmd == comandoBt) {
+			//mainForm.deleteAll();
+			CPBluetooth Bt = new CPBluetooth(this);
+			try {
+				Bt.informacoesBlueTooth(mainForm);
+			} catch (MIDletStateChangeException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

@@ -1,7 +1,5 @@
 package crazypac;
 
-import java.util.Random;
-
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Displayable;
@@ -17,17 +15,14 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	private int currentX, currentY;
 	private long delay;
 	private boolean isPlay;
-	private Random random = new Random();
-	private Linha[] paredes;
-	 
+	private Fase[] fases;
+	private int faseAtual;
+	private int pegouBolinha;
+	private int contador;
 	/**
 	 * boneco PacMan
 	 */
 	private SpriteDir pacman;
-	/**
-	 * Fantasmas
-	 */
-	private SpriteDir[] fantasmas;
 	/**
 	 * Tamanho do movimento do PacMan
 	 * influencia diretamente em sua velocidade
@@ -42,9 +37,8 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 		super(true);
 		this.pai = pai;
 		delay = 20;
-		defineParedes();
+		defineFase();
 		adicionaComandos();
-		criaFantasmas();
 		criaPacman();
 	}
 	
@@ -54,16 +48,6 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 		pacman = new SpriteDir(SpriteDir.getImage("/images/pacman_frames.png"), 16, 16);
 	}
 	
-	private void criaFantasmas() {
-		fantasmas = new SpriteDir[3];
-		fantasmas[0] = new SpriteDir(SpriteDir.getImage("/images/fantasma.png"), 16, 16);
-		fantasmas[0].setPosition(10, 10);
-		fantasmas[1] = new SpriteDir(SpriteDir.getImage("/images/fantasma.png"), 16, 16);
-		fantasmas[1].setPosition(getWidth()-20, getWidth()-20);
-		fantasmas[2] = new SpriteDir(SpriteDir.getImage("/images/fantasma.png"), 16, 16);
-		fantasmas[2].setPosition(40, 40);
-	}
-
 	private void adicionaComandos() {
 		commandBack = new Command("Voltar", Command.BACK, 0);
 		addCommand(commandBack);
@@ -73,16 +57,10 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	/**
 	 * Define as paredes do Jogo
 	 */
-	private void defineParedes() {
-		int width = getWidth(), height = getHeight();
-		paredes = new Linha[7];
-		paredes[0] = new Linha(      2,        2, width-2,        2, width, height);
-		paredes[1] = new Linha(      2,        2,       2, height-2, width, height);
-		paredes[2] = new Linha(      2, height-2, width-2, height-2, width, height);
-		paredes[3] = new Linha(width-2,        2, width-2, height-2, width, height);
-		paredes[4] = new Linha(30, 40, 100, 40, width, height);
-		paredes[5] = new Linha(40, 60, 40, 140, width, height);
-		paredes[6] = new Linha(100, 140, 160, 140, width, height);
+	private void defineFase() {
+		fases = new Fase[1];
+		fases[0] = new Fase1(getWidth(), getHeight());
+		faseAtual = 0;
 	}
 
 	/**
@@ -90,51 +68,13 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	 * @param g
 	 * @param color
 	 * @param linhas
-	 */
+	 * mantido por dozinha de deletar... hehe ;)
 	private void desenhaLinhas(Graphics g, int color, Linha[] linhas){
 		g.setColor(color);
 		for (Linha linha: linhas)
 			linha.desenhaLinha(g);
-	}
+	}*/
 
-	/**
-	 * verifica a colisao de dois personagens
-	 * eles devem ter a mesma largura e a mesma altura
-	 * @param per1
-	 * @param per2
-	 */
-	public boolean colisao(Sprite per1, Sprite per2) 
-	{
-		return colisao(
-				per1.getX(),per1.getY(),
-				per1.getX()+per1.getWidth(),per1.getY()+per1.getHeight(),
-				per2.getX(),per2.getY(),
-				per2.getX()+per2.getWidth(),per2.getY()+per2.getHeight()
-				);
-	}
-	
-
-	/**
-	 * Verifica a colisão entre duas retas
-	 * @param pX
-	 * @param pY
-	 * @param pX2
-	 * @param pY2
-	 * @param poX
-	 * @param poY
-	 * @param poX2
-	 * @param poY2
-	 * @return
-	 */
-	public boolean colisao(int pX,  int pY, 
-			               int pX2, int pY2,
-			               int poX,  int poY,
-			               int poX2, int poY2) 
-	{
-		Linha aux = new Linha(pX,pY,pX2,pY2,getWidth(),getHeight());
-		return aux.colideComLinha(poX, poY, poX2, poY2);
-	}
-	
 	/**
 	 * verifica a colisao entre o Pacman e as linhas
 	 * que compõem o vetor
@@ -143,7 +83,7 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	 * @param linhas
 	 * @return
 	 */
-	private boolean colisao(int nextX, int nextY, Linha[] linhas)
+	private boolean pacmanColide(int nextX, int nextY, Linha[] linhas)
 	{
 		for (Linha linha: linhas){
 			if (linha.colideComLinha(nextX, nextY,
@@ -157,33 +97,11 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	}
 	
 	/**
-	 * verifica a colisao entre um desenho e as linhas que
-	 * compõem o vetor
-	 * @param nextX
-	 * @param nextY
-	 * @param width
-	 * @param height
-	 * @param linhas
-	 * @return
-	 */
-	private boolean colisao(int nextX, int nextY, int width, int height, Linha[] linhas)
-	{
-		for (Linha linha: linhas){
-			if (linha.colideComLinha(nextX, nextY,
-					                 nextX+width,
-					                 nextY+height
-					                )
-				)
-				return true;
-		}
-		return false;	
-	}
-	
-	/**
 	 * verifica os comandos do usuário sobre o menu
 	 */
 	public void commandAction(Command arg0, Displayable arg1) {
 		if (arg0 == commandBack) {
+			stop();
 			pai.voltouJogo();
 			pai.setCurrent();
 		}
@@ -208,17 +126,49 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 		int keyStates = getKeyStates();
 		if (keyStates == 0) keyStates = oldKeyStates;
 	
-		for (Sprite aux: fantasmas)
-			if (colisao(pacman,aux)){
-				pai.perdeuJogo();
-				stop();
+		int i = 0;
+		for (Sprite aux: fases[faseAtual].getFantasmas())
+		{
+			if (Colisao.colisao(pacman,aux)){
+				if (fases[faseAtual].getEstadoFantasmas()) {
+					pai.perdeuJogo();
+					stop();
+				}else if (pegouBolinha == 1){
+					fases[faseAtual].apagaFantasmas(i);
+				}
 			}
+			i++;
+		}
+		
+		i = 0;
+		for (Sprite aux: fases[faseAtual].getBolinhas())
+		{
+			if (Colisao.colisao(pacman,aux)){
+				fases[faseAtual].apagaBolinhas(i);
+				pegouBolinha = 1;
+				contador = 0;
+				fases[faseAtual].defineEstadoFantasmas(false);
+			}
+			i++;
+		}
+		
+		if (pegouBolinha == 1 || pegouBolinha == 2) contador++;
+		if (contador == 400) {
+			fases[faseAtual].recuperaFantasmas();
+			pegouBolinha = 2;
+		}
+		
+		if (contador == 450) {
+			fases[faseAtual].defineEstadoFantasmas(true);
+			pegouBolinha = 0;
+			contador = 0;
+		}
 		
 	    // Left
 	    if ((keyStates & LEFT_PRESSED) != 0)
 	    {
 	    	oldKeyStates = keyStates;
-	    	if (!colisao(currentX - pacmanMove, currentY, paredes))
+	    	if (!pacmanColide(currentX - pacmanMove, currentY, fases[faseAtual].getParedes()))
 	    	{
 	    		currentX = Math.max(0, currentX - pacmanMove);
 	    		pacman.setFrame(1);
@@ -228,8 +178,7 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	    if ((keyStates & RIGHT_PRESSED) !=0 ) 
 	    {
 	    	oldKeyStates = keyStates;
-	    	//if ( currentX + pacman.getWidth() < width)
-	    	if (!colisao(currentX + pacmanMove, currentY, paredes))
+	    	if (!pacmanColide(currentX + pacmanMove, currentY, fases[faseAtual].getParedes()))
 	    	{
 	    		currentX = Math.min(getWidth(), currentX + pacmanMove);
 	    		pacman.setFrame(0);
@@ -239,7 +188,7 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	    if ((keyStates & UP_PRESSED) != 0) 
 	    {
 	    	oldKeyStates = keyStates;
-	    	if (!colisao(currentX, currentY - pacmanMove, paredes)) 
+	    	if (!pacmanColide(currentX, currentY - pacmanMove, fases[faseAtual].getParedes()))
 	    	{
 	    		currentY = Math.max(0, currentY - pacmanMove);
 	    		pacman.setFrame(2);
@@ -249,7 +198,7 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	    if ((keyStates & DOWN_PRESSED) !=0) 
 	    {
 	    	oldKeyStates = keyStates;
-	    	if (!colisao(currentX, currentY + pacmanMove, paredes)) 
+	    	if (!pacmanColide(currentX, currentY + pacmanMove, fases[faseAtual].getParedes()))
 	    	{
 	    	  currentY = Math.min(getHeight(), currentY + pacmanMove);
 	        	pacman.setFrame(3);
@@ -265,51 +214,13 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	    g.setColor(0xffffff);
 	    g.fillRect(0, 0, getWidth(), getHeight());
 	    
+	    fases[faseAtual].movimentaFantasmas();
+	    fases[faseAtual].desenha(g, 0x000000);
+	    
 	    pacman.setPosition(currentX, currentY);
 	    pacman.paint(g);
 	    
-	    movimentaFantasmas();
-	    for (Sprite aux: fantasmas)
-	    	aux.paint(g);
-	
-	    desenhaLinhas(g, 0x000000, paredes);
-	    
 	    flushGraphics();
-	}
-
-	/**
-	 * escolhe uma direção diferente do parâmetro de entrada
-	 * @param dir: direção atual
-	 * @return: outra direção
-	 */
-	private char modificaDir(char dir) {
-		char vet [] = {'R','L','U','D'};
-		int aux=0;
-		do {
-			aux = Math.abs(random.nextInt()%4);
-		}while ( vet[aux] == dir );
-		return vet[aux];
-	}
-	
-	private void movimentaFantasmas() {
-		for (SpriteDir aux: fantasmas) {
-			int nextX = aux.getX(), 
-				nextY = aux.getY();
-			switch (aux.getDir()) {
-			case 'R': nextX+=1;	break;
-			case 'L': nextX-=1; break;
-			case 'U': nextY-=1; break;
-			case 'D': nextY+=1; break;
-			}
-			if (random.nextInt()%193 == 0) //223
-				aux.setDir(modificaDir(aux.getDir()));
-			
-			if (!colisao(nextX,nextY,aux.getWidth(),aux.getHeight(),paredes))
-				aux.setPosition(nextX, nextY);
-			else
-				aux.setDir(modificaDir(aux.getDir()));
-		}
-		
 	}
 
 	public void start() {
