@@ -3,28 +3,51 @@ package crazypac;
 import javax.microedition.lcdui.Graphics;
 
 /**
- * Classe Linha que permite definir uma linha
- *     com valores máximos na horizontal e vertical
- *     
- * @author Jacson Rodrigues
+ * Classe Linha que permite definir uma linha com 
+ * valores máximos na horizontal e vertical
+ * @author  Jacson Rodrigues
  */
 public class Linha {
 	
+	/**
+	 * posição inicial horizontal
+	 * @uml.property  name="x"
+	 */
 	private int x;
+	/**
+	 * posição inicial vertical
+	 * @uml.property  name="y"
+	 */
 	private int y;
+	/**
+	 * posição final horizontal
+	 * @uml.property  name="x2"
+	 */
 	private int x2;
+	/**
+	 * posição final vertical
+	 * @uml.property  name="y2"
+	 */
 	private int y2;
+	/**
+	 * Largura da fase
+	 * @uml.property  name="width"
+	 */
 	private int width;
+	/**
+	 * Altura da fase
+	 * @uml.property  name="height"
+	 */
 	private int height;
 	
 	/**
-	 * Construtor que já inicia uma linha com seus parâmetros
+	 * Construtor que ja inicia uma linha com seus parametros
 	 * @param x: ponto horizontal inicial
 	 * @param y: ponto vertical inicial
 	 * @param x2: ponto horizontal final
 	 * @param y2: ponto vetival final
-	 * @param width: tamanho máximo na horizontal
-	 * @param height: tamanho máximo na vertical
+	 * @param width: tamanho maximo na horizontal
+	 * @param height: tamanho maximo na vertical
 	 */
 	public Linha(int x, int y, int x2, int y2, int width, int height){
 		setHeight(height); setWidth(width);
@@ -32,10 +55,10 @@ public class Linha {
 	}
 
 	/**
-	 * Construtor que inicia a linha com seus parâmetros iguais a zero,
-	 * exceto os tamanhos máximos na horizontal e vertical
-	 * @param width
-	 * @param height
+	 * Construtor que inicia a linha com seus parametros iguais a zero,
+	 * exceto os tamanhos maximos na horizontal e vertical (largura e altura da fase)
+	 * @param width: largura da fase
+	 * @param height: altura da fase
 	 */
 	public Linha(int width, int height){
 		setHeight(height); setWidth(width);
@@ -44,7 +67,7 @@ public class Linha {
 	
 	/**
 	 * Construtor que inicia a linha com todos 
-	 * seus parâmetros iguais a 0
+	 * seus parametros iguais a 0
 	 */
 	public Linha(){
 		setHeight(0); setWidth(0);
@@ -52,32 +75,36 @@ public class Linha {
 	}
 	
 	/**
-	 * Define a largura máxima da linha
-	 * @param width: largura
+	 * Define a largura maxima da linha
+	 * @param  width: largura
+	 * @uml.property  name="width"
 	 */
 	private void setWidth(int width) { if (width >= 0)this.width = width; }
 
 	/**
-	 * Define a altura máxima da linha
-	 * @param height: altura
+	 * Define a altura maxima da linha
+	 * @param  height: altura
+	 * @uml.property  name="height"
 	 */
 	private void setHeight(int height) { if (height>=0)this.height = height; }
 	
 	/**
-	 * Obtém a altura máxima da linha
-	 * @return altura máxima da linha
+	 * Obtam a altura maxima da linha
+	 * @return  altura maxima da linha
+	 * @uml.property  name="height"
 	 */
 	public int getHeight() { return height; }
 	
 	/**
-	 * Obtém a largura máxima da linha
-	 * @return largura máxima da linha
+	 * Obtam a largura maxima da linha
+	 * @return  largura maxima da linha
+	 * @uml.property  name="width"
 	 */
 	public int getWidth() { return width; }
 	
 	/**
-	 * Verifica se o valor está em uma posição viável na horizontal
-	 * e retorna uma posição válida
+	 * Verifica se o valor esta em uma posiaao viavel na horizontal
+	 * e retorna uma posiaao valida
 	 * @param aux
 	 * @return
 	 */
@@ -88,8 +115,8 @@ public class Linha {
 	}
 	
 	/**
-	 * Verifica se o valor está em uma posição viável na vertical
-	 * e retorna uma posição válida
+	 * Verifica se o valor esta em uma posiaao viavel na vertical
+	 * e retorna uma posiaao valida
 	 * @param aux
 	 * @return
 	 */
@@ -100,7 +127,8 @@ public class Linha {
 	}
 	/**
 	 * define o ponto horizontal inicial da linha
-	 * @param x
+	 * @param  x
+	 * @uml.property  name="x"
 	 */
 	public void setX(int x) {
 		this.x = pegaPontoHor(x);
@@ -108,7 +136,8 @@ public class Linha {
 	
 	/**
 	 * define o ponto vertical inicial da linha
-	 * @param y
+	 * @param  y
+	 * @uml.property  name="y"
 	 */
 	public void setY(int y){
 		this.y = pegaPontoVer(y);
@@ -116,7 +145,8 @@ public class Linha {
 	
 	/**
 	 * define o ponto horizontal final da linha 
-	 * @param x2
+	 * @param  x2
+	 * @uml.property  name="x2"
 	 */
 	public void setX2(int x2){
 		this.x2 = pegaPontoHor(x2);
@@ -124,39 +154,44 @@ public class Linha {
 	
 	/**
 	 * define o ponto vertical final da linha
-	 * @param y2
+	 * @param  y2
+	 * @uml.property  name="y2"
 	 */
 	public void setY2(int y2){
 		this.y2 = pegaPontoVer(y2);
 	}
 	
 	/**
-	 * obtém o ponto horizontal inicial da linha
+	 * obtam o ponto horizontal inicial da linha
 	 * @return
+	 * @uml.property  name="x"
 	 */
 	public int getX(){
 		return x;
 	}
 	
 	/**
-	 * obtém o ponto vertical inicial da linha
+	 * obtam o ponto vertical inicial da linha
 	 * @return
+	 * @uml.property  name="y"
 	 */
 	public int getY(){
 		return y;
 	}
 	
 	/**
-	 * obtém o ponto horizontal final da linha
+	 * obtam o ponto horizontal final da linha
 	 * @return
+	 * @uml.property  name="x2"
 	 */
 	public int getX2(){
 		return x2;
 	}
 	
 	/**
-	 * obtém o ponto vertical final da linha
+	 * obtam o ponto vertical final da linha
 	 * @return
+	 * @uml.property  name="y2"
 	 */
 	public int getY2(){
 		return y2;
@@ -164,7 +199,7 @@ public class Linha {
 
 	/**
 	 * Verifica se a linha da classe colide com a linha
-	 * especificada nos parâmetros
+	 * especificada nos parametros
 	 * @param posX
 	 * @param posY
 	 * @param posX2
@@ -196,7 +231,7 @@ public class Linha {
 	
 	/**
 	 * Desenha a linha da classe em Graphics passado
-	 * como parâmetro
+	 * como parametro
 	 * @param g
 	 */
 	public void desenhaLinha(Graphics g) {

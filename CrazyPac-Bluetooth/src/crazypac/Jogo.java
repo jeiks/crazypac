@@ -1,7 +1,6 @@
 package crazypac;
 
 import java.io.IOException;
-
 import javax.bluetooth.BluetoothStateException;
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
@@ -9,23 +8,27 @@ import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.game.GameCanvas;
 import javax.microedition.lcdui.game.Sprite;
-
 import net.java.dev.marge.communication.CommunicationListener;
 import net.java.dev.marge.inquiry.DeviceDiscoverer;
 
+/**
+ * Classe de manipulação do jogo tanto no cliente quanto no servidor
+ * @author   Jacson RC Silva
+ */
 public class Jogo extends GameCanvas 
 implements CommunicationListener, Runnable, CommandListener {
 
 	/**
-	 * InstÃ¢ncia do Jogo
+	 * Baseado no padrão Singleton
+	 * Instância do Jogo
 	 */
 	private static Jogo instance;
 	/**
-	 * DefiniÃ§Ã£o de Servidor
+	 * Definição de Servidor
 	 */
 	private boolean isServer;
 	/**
-	 * Tempo de iteraÃ§Ã£o da thread do Jogo
+	 * Tempo de iteração da thread do Jogo
 	 */
 	private int threadSleep;
 
@@ -35,12 +38,14 @@ implements CommunicationListener, Runnable, CommandListener {
 	 */
 	private Command commandBack;
 	/**
-	 * Define se o jogo estÃ¡ em execuÃ§Ã£o
+	 * Define se o jogo estÃ¡ em execução
 	 * obs: controle interno da Thread, mÃ©todo run()
 	 */
 	private boolean isPlay;
 	/**
 	 * Fases do Jogo
+	 * @uml.property  name="fases"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
 	 */
 	private Fase[] fases;
 	/**
@@ -66,7 +71,7 @@ implements CommunicationListener, Runnable, CommandListener {
 	 */
 	private int pacmanMove = 1;
 	/**
-	 * Ãšltima tecla pressionada
+	 * Última tecla pressionada
 	 */
 	private int oldKeyStates = 0;
 	
@@ -74,7 +79,7 @@ implements CommunicationListener, Runnable, CommandListener {
 	 * Construtor principal
 	 * Cria o jogo, definindo a fase, os comandos e o pacman
 	 * 
-	 * privado pela utilizaÃ§Ã£o do padrÃ£o de projeto Singleton
+	 * privado pela utilização do padrão de projeto Singleton
 	 */
 	private Jogo() {
 		super(false);
@@ -85,7 +90,7 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 
 	/**
-	 * funÃ§Ã£o que cria o PacMan
+	 * método que cria o PacMan
 	 */
 	private void criaPacman() {
 		pacman = new SpriteDir(SpriteDir.getImage("/images/pacman_frames.png"), 16, 16);
@@ -93,7 +98,7 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 	
 	/**
-	 * FunÃ§Ã£o que adiciona os comandos ao CommandListener
+	 * método que adiciona os comandos ao CommandListener
 	 */
 	private void adicionaComandos() {
 		commandBack = new Command("Voltar", Command.BACK, 0);
@@ -111,12 +116,12 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 	
 	/**
-	 * verifica a colisao entre o Pacman e as linhas
-	 * que compÃµem o vetor
-	 * @param nextX
-	 * @param nextY
-	 * @param linhas
-	 * @return
+	 * verifica a colisão entre a próxima posição o Pacman e as paredes
+	 * que compõem o arranjo do parâmetro linhas
+	 * @param nextX: próxima posição horizontal
+	 * @param nextY: próxima posição vertical
+	 * @param linhas: paredes do jogo
+	 * @return: se colide ou não
 	 */
 	private boolean pacmanColide(int nextX, int nextY, Linha[] linhas)
 	{
@@ -132,9 +137,11 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 
 	/**
-	 * retorna a mesma instÃ¢ncia do jogo para qualquer chamada
-	 * padrÃ£o de projeto Singleton
-	 * @return instÃ¢ncia do Jogo
+	 * retorna a mesma instância do jogo para qualquer 
+	 * chamada.
+	 * Padrão de projeto Singleton
+	 * @return  instância do Jogo
+	 * @uml.property  name="instance"
 	 */
 	public synchronized static Jogo getInstance() {
 		if (instance == null)
@@ -144,22 +151,22 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 
 	/**
-	 * cria uma nova instancia para o jogo
+	 * cria uma nova instância para o jogo
 	 */
 	public synchronized static void newInstance() {
 		instance = new Jogo();
 	}
 	/**
-	 * define se Ã© Servidor ou Cliente
-	 * @param is: Ã© ou nÃ£o Ã© servidor
+	 * define se é Servidor ou Cliente
+	 * @param is: é ou não é servidor
 	 */
 	public void isServer(boolean is) {
 		isServer = is;
 	}
 	
 	/**
-	 * FunÃ§Ã£o que demonstra um erro
-	 * ver documentaÃ§Ã£o do Marge
+	 * Função que demonstra um erro
+	 * ver documentação do Marge
 	 */
 	public synchronized void errorOnReceiving(IOException arg0) {
 		//System.out.println("Error on Receiving: "+arg0.getMessage());
@@ -168,8 +175,8 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 	
 	/**
-	 * FunÃ§Ã£o que demonstra um erro
-	 * ver documentaÃ§Ã£o do Marge
+	 * Função que demonstra um erro
+	 * ver documentação do Marge
 	 */
 	public synchronized void errorOnSending(IOException arg0) {
 		//System.out.println("Error on Sending: "+arg0.getMessage());
@@ -177,6 +184,10 @@ implements CommunicationListener, Runnable, CommandListener {
 		mensagemDesconectou();
 	}
 
+	/**
+	 * apresenta a tela de desconexão do servidor
+	 * ou do cliente da conexão
+	 */
 	public void mensagemDesconectou() {
 		stop();
 		String msg;
@@ -187,6 +198,10 @@ implements CommunicationListener, Runnable, CommandListener {
 				);
 	}
 	
+	/**
+	 * Envia a posição do personagem responsável para
+	 * o cliente ou para o servidor
+	 */
 	public void sendPosition() {
 		String msg = "";
         if (this.isServer) {
@@ -202,8 +217,8 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 	
 	/**
-	 * FunÃ§Ã£o que demonstra um erro
-	 * ver documentaÃ§Ã£o do Marge
+	 * Função que recebe as mensagens enviadas pelo cliente
+	 * ou pelo servidor
 	 */
 	public synchronized void receiveMessage(byte[] arg0) {
 		String mensagem = new String(arg0);
@@ -231,7 +246,7 @@ implements CommunicationListener, Runnable, CommandListener {
 						break;
 					case 1:
 						CrazyPac.getInstance().setCurrent(
-								new TelaFacil("Ganhador", "ParabÃ©ns, vocÃª ganhou o jogo!",null)
+								new TelaFacil("Ganhador", "Parabéns, vocÃª ganhou o jogo!",null)
 								);
 						break;
 					case 2:
@@ -284,12 +299,20 @@ implements CommunicationListener, Runnable, CommandListener {
 		//System.out.println("Recebi a posicao: "+posX+","+posY);
     }
 
+	/**
+	 * função que envia a mensagem para o dispositivo
+	 * conectado
+	 * @param msg
+	 */
 	public synchronized void sendMsg(String msg) {
 		CrazyPac.getInstance().getDevice().send(msg.getBytes());
 	}
 	
 	/**
-	 * ExecuÃ§Ã£o do Jogo
+	 * Execução da thread do Jogo
+	 * responsável por chamar os métodos referentes
+	 * a entrada do usuário, ao movimento dos fantasmas automáticos.
+	 * E por verificar se o CrazyPac venceu o jogo
 	 */
 	public void run() {
 		Graphics g = getGraphics();
@@ -302,7 +325,7 @@ implements CommunicationListener, Runnable, CommandListener {
 					sendMsg("@#0#@");
 					stop();
 					CrazyPac.getInstance().setCurrent(
-							new TelaFacil("Vencedor", "ParabÃ©ns, vocÃª venceu!",null)
+							new TelaFacil("Vencedor", "Parabéns, você venceu!",null)
 							);
 				}
 				fases[faseAtual].movimentaFantasmasAutomaticos();
@@ -318,7 +341,9 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 	
 	/**
-	 * verifica as entradas do jogo
+	 * verifica as entradas que o jogo recebe do usuário
+	 * define quando o fantasma ganha o jogo.
+	 * estabelece as ações referentes ao movimento do CrazyPac
 	 */
 	private synchronized void inputServer() {
 		int keyStates = getKeyStates();
@@ -431,7 +456,9 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 
 	/**
-	 * verifica as entradas do jogo
+	 * verifica as entradas que o jogo recebe do usuário
+	 * define quando o fantasma ganha o jogo.
+	 * estabelece as ações referentes ao movimento do Fantasma
 	 */
 	private synchronized void inputClient() {
 		int keyStates = getKeyStates();
@@ -496,7 +523,7 @@ implements CommunicationListener, Runnable, CommandListener {
 	}
 
 	/**
-	 * pÃ¡ra o Jogo
+	 * acaba o jogo
 	 */
 	public void stop(){
 		try {
@@ -507,7 +534,8 @@ implements CommunicationListener, Runnable, CommandListener {
 
 	
 	/**
-	 * Inicia a execuÃ§Ã£o do Jogo (iniciando a Thread)
+	 * Inicia a execução do Jogo 
+	 * ( iniciando a Thread que passará a executar o método run() )
 	 */
 	public void inicia() {
 		isPlay = true;		
@@ -515,6 +543,10 @@ implements CommunicationListener, Runnable, CommandListener {
         t.start();
 	}
 
+	/**
+	 * recebe os comandos do usuário em relação as
+	 * opções demonstradas no Listenner
+	 */
 	public void commandAction(Command arg0, Displayable arg1) {
 		if (arg0 == commandBack) {
 			stop();

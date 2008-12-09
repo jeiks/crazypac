@@ -1,22 +1,27 @@
 package crazypac;
 
 import java.util.Random;
-
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.game.Sprite;
 
 /**
- * Classe padrÃ£o para as fases do jogo
- * @author Jacson Rodrigues
+ * Classe padrão para implementação das classes do jogo a nova fase do jogo deve extender essa classe e adicionar as paredes, os escudos(bolinhas) e os fantasmas
+ * @author   Jacson RC Silva
  */
-public class Fase {
+public abstract class Fase {
 
 	/**
-	 * Tamanho da fase
+	 * Largura da fase
+	 * @uml.property  name="width"
 	 */
-	private int width, height;
+	private int width;
 	/**
-	 * distancia das retas de borda da fase
+	 * Altura da fase
+	 * @uml.property  name="height"
+	 */
+	private int height;
+	/**
+	 * distância das retas de borda da fase
 	 */
 	private int canto = 2;
 	/**
@@ -26,27 +31,34 @@ public class Fase {
 	/**
 	 * fantasmas da fase
 	 */
-	private ArrayList fantasmas, fantasmasRemovidos;
+	private ArrayList fantasmas;
+	/**
+	 * fantasmas da fase
+	 */
+	private ArrayList fantasmasRemovidos;
 	/**
 	 * bolinhas de poder do jogo
 	 */
-	private ArrayList bolinhas, bolinhasRemovidas;
+	private ArrayList bolinhas;
+	/**
+	 * bolinhas de poder do jogo
+	 */
+	private ArrayList bolinhasRemovidas;
 	/**
 	 * variÃ¡vel ligada ao movimento dos personagens 
 	 */
 	private Random random = new Random();
 	/**
-	 * estado dos fantasmas
-	 * true = ativos
-	 * false = inativos
+	 * estado dos fantasmas true = ativos false = inativos
+	 * @uml.property  name="estadoFantasmas"
 	 */
 	private boolean estadoFantasmas;
 
 	/**
-	 * para diminuir o tempo de execucao, foi criado um vetor
-	 * com os nÃºmeros dos fantasmas automaticos
+	 * para diminuir o tempo de execução, foi criado um vetor com os números dos fantasmas automaticos
+	 * @uml.property  name="fantasmaCliente"
 	 */
-	private int fantasmaCliente;
+	private static int fantasmaCliente = 0;
 	
 	/**
 	 * define o movimento randomico
@@ -78,7 +90,8 @@ public class Fase {
 
 	/**
 	 * define a largura da fase
-	 * @param width
+	 * @param  width
+	 * @uml.property  name="width"
 	 */
 	private void setWidth(int width) {
 		this.width = width;
@@ -87,6 +100,7 @@ public class Fase {
 	/**
 	 * obtem a largura da fase
 	 * @return
+	 * @uml.property  name="width"
 	 */
 	public int getWidth() {
 		return width;
@@ -94,7 +108,8 @@ public class Fase {
 	
 	/**
 	 * define a altura da fase
-	 * @param height
+	 * @param  height
+	 * @uml.property  name="height"
 	 */
 	private void setHeight(int height) {
 		this.height = height;
@@ -103,6 +118,7 @@ public class Fase {
 	/**
 	 * obtem a altura da fase
 	 * @return
+	 * @uml.property  name="height"
 	 */
 	public int getHeight() {
 		return height;
@@ -111,6 +127,7 @@ public class Fase {
 	/**
 	 * Obtem as paredes da fase
 	 * @return
+	 * @uml.property  name="paredes"
 	 */
 	public synchronized Linha[] getParedes() {
 		Linha[] retorno =  new Linha[paredes.size()];
@@ -135,6 +152,13 @@ public class Fase {
 			((Sprite) bolinhas.get(i)).paint(g);
 	}
 	
+	/**
+	 * adiciona paredes na fase
+	 * @param posX: posição horizontal inicial da parede
+	 * @param posY: posição vertical inicial da parede
+	 * @param posX2: posição horizontal final da parede
+	 * @param posY2: posição vertical final da parede
+	 */
 	public void adicionaParedes(int posX, int posY, int posX2, int posY2) {
 		adicionaParedes(new Linha(posX, posY, posX2, posY2, getWidth(), getHeight()));
 	}
@@ -149,7 +173,7 @@ public class Fase {
 	
 	/**
 	 * adiciona paredes na fase
-	 * @param parede: vÃ¡rias paredes
+	 * @param parede: várias paredes
 	 */
 	public void adicionaParedes(Linha[] parede) {
 		for (Linha p: parede)
@@ -159,18 +183,25 @@ public class Fase {
 	/**
 	 * adiciona fantasmas na fase
 	 * @param f: somente um fantasma
-	 * @param x: posiÃ§Ã£o X
-	 * @param y: posiÃ§Ã£o Y
+	 * @param x: posição X
+	 * @param y: posição Y
 	 */
 	public void adicionaFantasmas(SpriteDir f, int x, int y) {
 		f.setPosition(x, y);
 		fantasmas.add(f);
 	}
 
+	/**
+	 * apaga o fantasma através de seu índice no vetor
+	 * @param index
+	 */
 	public synchronized void apagaFantasmas(int index) {
 		fantasmasRemovidos.add(fantasmas.remove(index));
 	}
 
+	/**
+	 * adiciona novamente os fantasmas removidos a fase
+	 */
 	public synchronized void recuperaFantasmas() {
 		if (fantasmasRemovidos.size() != 0 ) {
 			int aux = fantasmasRemovidos.size();
@@ -181,8 +212,8 @@ public class Fase {
 	
 	/**
 	 * adiciona fantasmas na fase
-	 * deve-se, antes de chamar a funÃ§Ã£o, especificar
-	 *    a posiÃ§Ã£o dos fantasmas com setPosition
+	 * deve-se, antes de chamar a função, especificar
+	 *    a posição dos fantasmas com setPosition
 	 * @param fs: vÃ¡rios fantasmas
 	 */
 	public synchronized void adicionaFantasmas(SpriteDir[] fs) {
@@ -190,6 +221,13 @@ public class Fase {
 			fantasmas.add(f);
 	}
 	
+	/**
+	 * adiciona fantasmas ao jogo.
+	 * o programador deve tomar cuidado para não posicionar
+	 * o fantasma sobre outros objetos
+	 * @param posX: posição horizontal
+	 * @param posY: posição vertical
+	 */
 	public synchronized void adicionaFantasmas(int posX, int posY) {
 		adicionaFantasmas(
 			new SpriteDir(SpriteDir.getImage("/images/fantasma_frames.png"), 16, 16),
@@ -198,7 +236,8 @@ public class Fase {
 	
 	/**
 	 * retorna os fantasmas da fase
-	 * @return
+	 * @return: um arranjo SpriteDir com os fantasmas 
+	 * @uml.property  name="fantasmas"
 	 */
 	public synchronized SpriteDir[] getFantasmas() {
 		SpriteDir[] retorno =  new SpriteDir[fantasmas.size()];
@@ -207,41 +246,82 @@ public class Fase {
 		return retorno;
 	}
 	
+	/**
+	 * retorna o número de fantasmas
+	 * @return
+	 */
 	public int numFantasmas() {
 		return fantasmas.size();
 	}
 	
+	/**
+	 * Obtém o fantasma da posição do arranjo desejada
+	 * @param qual: posição do arranjo
+	 * @return
+	 */
 	public synchronized SpriteDir getFantasma(int qual) {
 		return (SpriteDir) fantasmas.get(qual);
 	}
 
+	/**
+	 * verifica se existem fantasmas
+	 * @return: se existe ou não fantasmas
+	 */
 	public boolean existeFantasmas() {
 		if (fantasmas.size() == 0)
 			return false;
 		else return true;
 	}
 	
+	/**
+	 * modifica os fantasmas para seu estado: ativo ou inativo.
+	 * relacionado diretamente a this.estadoFantasmas
+	 * @param qual
+	 * @param fantasma
+	 */
 	public synchronized void modificaFantasma(int qual, SpriteDir fantasma) {
 		if (estadoFantasmas) fantasma.setFrame(0);
 		else fantasma.setFrame(1);
 		fantasmas.set(qual, fantasma);
 	}
 	
+	/**
+	 * Adiciona escudos na fase.
+	 * Nomeados como bolinhas, pois podem receber outras
+	 * figuras diferentes do escudo
+	 * @param f: Sprite da bolinha
+	 * @param x: posição horizontal
+	 * @param y: posição vertical
+	 */
 	public synchronized void adicionaBolinhas(Sprite f, int x, int y) {
 		f.setPosition(x, y);
 		bolinhas.add(f);
 	}
 	
+	/**
+	 * Adiciona escudos ao jogo.
+	 * Este método já tem o escudo como imagem pré-definida
+	 * @param posX: posição na horizontal
+	 * @param posY: posição na vertical
+	 */
 	public synchronized void adicionaBolinhas(int posX, int posY) {
 		adicionaBolinhas(
 				new SpriteDir(SpriteDir.getImage("/images/super_power.png"), 12, 12),
 				posX, posY);
 	}
 
+	/**
+	 * Apaga a bolinha do índice do arranjo especificado
+	 * @param index: índice do arranjo
+	 */
 	public synchronized void apagaBolinhas(int index) {
 		bolinhasRemovidas.add(bolinhas.remove(index));
 	}
 	
+	/**
+	 * @return arranjo das bolinhas(escudos) do jogo
+	 * @uml.property  name="bolinhas"
+	 */
 	public synchronized Sprite[] getBolinhas() {
 		Sprite[] retorno =  new Sprite[bolinhas.size()];
 		for (int i=0; i< bolinhas.size(); i++)
@@ -249,9 +329,9 @@ public class Fase {
 		return retorno;
 	}
 	/**
-	 * escolhe uma direÃ§Ã£o diferente do parÃ¢metro de entrada
-	 * @param dir: direÃ§Ã£o atual
-	 * @return: outra direÃ§Ã£o
+	 * escolhe uma direção diferente do parÃ¢metro de entrada
+	 * @param dir: direção atual
+	 * @return: outra direção
 	 */
 	private char modificaDir(char dir) {
 		char vet [] = {'R','L','U','D'};
@@ -324,12 +404,16 @@ public class Fase {
 		fantasmas.set(qual, aux);
 	}
 	
+	/**
+	 * @param estadoFantasmas  o estadoFantasmas a setar
+	 * @uml.property  name="estadoFantasmas"
+	 */
 	public void setEstadoFantasmas(boolean estado) {
 		defineEstadoFantasmas(estado);
 	}
 	
 	/**
-	 * Troca as figuras dos fantasmas para tivos ou nÃ£o
+	 * Troca as figuras dos fantasmas para tivos ou não
 	 * @param estado
 	 */
 	public synchronized void defineEstadoFantasmas(boolean estado) {
@@ -343,21 +427,27 @@ public class Fase {
 	}
 	
 	/**
-	 * ObtÃ©m o estado dos fantasmas
+	 * Obtém o estado dos fantasmas
 	 * @return
+	 * @uml.property  name="estadoFantasmas"
 	 */
 	public boolean getEstadoFantasmas() {
 		return estadoFantasmas;
 	}
 	
-	public void setFantasmaCliente(int fantasmaCliente) {
-		this.fantasmaCliente = fantasmaCliente;
-	}
-	
+	/**
+	 * @return  the fantasmaCliente
+	 * @uml.property  name="fantasmaCliente"
+	 */
 	public int getFantasmaCliente() {
 		return fantasmaCliente;
 	}
 	
+	/**
+	 * obtém as posições dos fantasmas como uma String
+	 * separada por ";"
+	 * @return: posição dos fantasmas separadas por ";"
+	 */
 	public synchronized String getPosicaoFantasmas(){
 		String retorno = "";
 		for (int i=0; i < fantasmas.size(); i++)
@@ -368,6 +458,11 @@ public class Fase {
 		return retorno;
 	}
 	
+	/**
+	 * define as posições dos fantasmas através de uma
+	 * String. As posições devem ser separadas por ";"
+	 * @param posicao: posição dos fantasmas separadas por ";"
+	 */
 	public synchronized void setPosicaoFantasmas(String posicao) {
 		int initialPos = 0;
 		int posFantasmas=0;

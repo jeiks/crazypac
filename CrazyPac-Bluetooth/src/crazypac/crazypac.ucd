@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" id="crazypac" metadata="uml2-1.0" initialized="true" tag="1000" key="3230303631303036204372617A795061632F6A65696B73">
+  <children xsi:type="editmodel:ClassEditModel" name="TelaCarregando" location="50,3772" size="338,97" id="crazypac/TelaCarregando" runTimeClassModel="TelaCarregando(Ljava.lang.String;Ljava.lang.String;Ljavax.microedition.lcdui.Image;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="315,18">
+      <children xsi:type="editmodel:MethodEditModel" name="TelaCarregando" id="crazypac/TelaCarregando#TelaCarregando(Ljava.lang.String;Ljava.lang.String;Ljavax.microedition.lcdui.Image;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.9/@sourceConnections.2 //@children.9/@sourceConnections.3" name="DevicesList" location="2230,1958" size="405,241" id="crazypac/DevicesList" runTimeClassModel="deviceNotReachable(),addRemoteDevice(Ljavax.bluetooth.RemoteDevice;),DevicesList(),commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;),serviceSearchError(),comandoSelecionar,comandoVoltar,serviceSearchCompleted(Ljavax.bluetooth.RemoteDevice;[Ljavax.bluetooth.ServiceRecord;),remoteDevices">
+    <children xsi:type="editmodel:CompartmentEditModel" size="167,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="comandoSelecionar" id="crazypac/DevicesList#comandoSelecionar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="comandoVoltar" id="crazypac/DevicesList#comandoVoltar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="remoteDevices" id="crazypac/DevicesList#remoteDevices"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="382,108">
+      <children xsi:type="editmodel:MethodEditModel" name="DevicesList" id="crazypac/DevicesList#DevicesList()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addRemoteDevice" id="crazypac/DevicesList#addRemoteDevice(Ljavax.bluetooth.RemoteDevice;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="commandAction" id="crazypac/DevicesList#commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deviceNotReachable" id="crazypac/DevicesList#deviceNotReachable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="serviceSearchCompleted" id="crazypac/DevicesList#serviceSearchCompleted(Ljavax.bluetooth.RemoteDevice;[Ljavax.bluetooth.ServiceRecord;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="serviceSearchError" id="crazypac/DevicesList#serviceSearchError()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/DevicesList->crazypac/TelaInicial" source="//@children.1" target="//@children.4" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,241" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="314,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/DevicesList->crazypac/Jogo" source="//@children.1" target="//@children.8" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,120" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="366,435"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/DevicesList->crazypac/CrazyPac" source="//@children.1" target="//@children.5" targetEnd="//@children.1/@sourceConnections.2/@children.2" label="//@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,241" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="110,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.3 //@children.8/@sourceConnections.4" name="Colisao" location="1476,469" size="553,151" id="crazypac/Colisao" runTimeClassModel="Colisao(),colisao(IIIIIIII),colisao(Ljavax.microedition.lcdui.game.Sprite;Ljavax.microedition.lcdui.game.Sprite;),colisao(IIII[Lcrazypac.Linha;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="530,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Colisao" id="crazypac/Colisao#Colisao()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="colisao" id="crazypac/Colisao#colisao(IIIIIIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="colisao" id="crazypac/Colisao#colisao(Ljavax.microedition.lcdui.game.Sprite;Ljavax.microedition.lcdui.game.Sprite;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="colisao" id="crazypac/Colisao#colisao(IIII[Lcrazypac.Linha;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Colisao->crazypac/Linha" source="//@children.2" target="//@children.7" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="541,151" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,41"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.1 //@children.11/@sourceConnections.2" name="ArrayList" location="50,50" size="291,475" id="crazypac/ArrayList" runTimeClassModel="storedObjects,toArray([Ljava.lang.Object;),increaseCapacity(),indexOf(Ljava.lang.Object;),getInternalArray(),contains(Ljava.lang.Object;),size(),trimToSize(),ArrayList(II),toString(),size,add(Ljava.lang.Object;),toArray(),get(I),clear(),set(ILjava.lang.Object;),add(ILjava.lang.Object;),growthFactor,ArrayList(),remove(I),remove(Ljava.lang.Object;),ArrayList(I)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="130,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="growthFactor" id="crazypac/ArrayList#growthFactor"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="size" id="crazypac/ArrayList#size"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="storedObjects" id="crazypac/ArrayList#storedObjects"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="268,342">
+      <children xsi:type="editmodel:MethodEditModel" name="ArrayList" id="crazypac/ArrayList#ArrayList(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ArrayList" id="crazypac/ArrayList#ArrayList(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ArrayList" id="crazypac/ArrayList#ArrayList()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="crazypac/ArrayList#add(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="crazypac/ArrayList#add(ILjava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="clear" id="crazypac/ArrayList#clear()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="contains" id="crazypac/ArrayList#contains(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="get" id="crazypac/ArrayList#get(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInternalArray" id="crazypac/ArrayList#getInternalArray()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="increaseCapacity" id="crazypac/ArrayList#increaseCapacity()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="indexOf" id="crazypac/ArrayList#indexOf(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="remove" id="crazypac/ArrayList#remove(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="remove" id="crazypac/ArrayList#remove(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="set" id="crazypac/ArrayList#set(ILjava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="size" id="crazypac/ArrayList#size()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toArray" id="crazypac/ArrayList#toArray([Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toArray" id="crazypac/ArrayList#toArray()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="crazypac/ArrayList#toString()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="trimToSize" id="crazypac/ArrayList#trimToSize()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0 //@children.9/@sourceConnections.0 //@children.8/@sourceConnections.1 //@children.5/@sourceConnections.0 //@children.1/@sourceConnections.0" name="TelaInicial" location="1631,2832" size="314,205" id="crazypac/TelaInicial" runTimeClassModel="getInstance(),imgPacMan,comandoSair,commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;),comandoJogar,TelaInicial(),instance">
+    <children xsi:type="editmodel:CompartmentEditModel" size="143,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="comandoJogar" id="crazypac/TelaInicial#comandoJogar"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="comandoSair" id="crazypac/TelaInicial#comandoSair"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="imgPacMan" id="crazypac/TelaInicial#imgPacMan"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="instance" id="crazypac/TelaInicial#instance"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="291,54">
+      <children xsi:type="editmodel:MethodEditModel" name="TelaInicial" id="crazypac/TelaInicial#TelaInicial()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="commandAction" id="crazypac/TelaInicial#commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="crazypac/TelaInicial#getInstance()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/TelaInicial->crazypac/MenuJogar" source="//@children.4" target="//@children.9" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,20" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="403,295"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/TelaInicial->crazypac/Jogo" source="//@children.4" target="//@children.8" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="288,673"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/TelaInicial->crazypac/CrazyPac" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="314,12" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,281"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.2 //@children.6/@sourceConnections.1 //@children.9/@sourceConnections.4 //@children.8/@sourceConnections.2 //@children.1/@sourceConnections.2" name="CrazyPac" location="2195,2563" size="187,295" id="crazypac/CrazyPac" runTimeClassModel="CrazyPac(),destroyApp(Z),setCurrent(Ljavax.microedition.lcdui.Displayable;),getDevice(),startApp(),getInstance(),setDevice(Lnet.java.dev.marge.entity.Device;),pauseApp(),device,getDisplay(),display,instance">
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="device" id="crazypac/CrazyPac#device"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="display" id="crazypac/CrazyPac#display"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="instance" id="crazypac/CrazyPac#instance"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,162">
+      <children xsi:type="editmodel:MethodEditModel" name="CrazyPac" id="crazypac/CrazyPac#CrazyPac()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="destroyApp" id="crazypac/CrazyPac#destroyApp(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDevice" id="crazypac/CrazyPac#getDevice()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDisplay" id="crazypac/CrazyPac#getDisplay()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="crazypac/CrazyPac#getInstance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pauseApp" id="crazypac/CrazyPac#pauseApp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCurrent" id="crazypac/CrazyPac#setCurrent(Ljavax.microedition.lcdui.Displayable;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDevice" id="crazypac/CrazyPac#setDevice(Lnet.java.dev.marge.entity.Device;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startApp" id="crazypac/CrazyPac#startApp()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/CrazyPac->crazypac/TelaInicial" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.2" label="//@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,292" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="314,3"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TelaFacil" location="2340,3589" size="316,133" id="crazypac/TelaFacil" runTimeClassModel="TelaFacil(Ljava.lang.String;Ljava.lang.String;Ljavax.microedition.lcdui.Image;),commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;),comandoOk">
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="comandoOk" id="crazypac/TelaFacil#comandoOk"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="293,36">
+      <children xsi:type="editmodel:MethodEditModel" name="TelaFacil" id="crazypac/TelaFacil#TelaFacil(Ljava.lang.String;Ljava.lang.String;Ljavax.microedition.lcdui.Image;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="commandAction" id="crazypac/TelaFacil#commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/TelaFacil->crazypac/TelaInicial" source="//@children.6" target="//@children.4" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="304,205"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/TelaFacil->crazypac/CrazyPac" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.1/@children.2" label="//@children.6/@sourceConnections.1/@children.0" sourceEnd="//@children.6/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="20,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="165,295"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.6 //@children.8/@sourceConnections.3 //@children.2/@sourceConnections.0" name="Linha" location="2007,776" size="416,529" id="crazypac/Linha" runTimeClassModel="getX2(),desenhaLinha(Ljavax.microedition.lcdui.Graphics;),x2,setY2(I),height,getHeight(),colideComLinha(IIII),Linha(II),setWidth(I),getWidth(),setX2(I),setX(I),width,Linha(),y2,setY(I),getX(),setHeight(I),pegaPontoHor(I),getY(),getY2(),Linha(IIIIII),y,pegaPontoVer(I),x">
+    <children xsi:type="editmodel:CompartmentEditModel" size="65,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="height" id="crazypac/Linha#height"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="width" id="crazypac/Linha#width"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="x" id="crazypac/Linha#x"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="x2" id="crazypac/Linha#x2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="y" id="crazypac/Linha#y"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="y2" id="crazypac/Linha#y2"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="393,342">
+      <children xsi:type="editmodel:MethodEditModel" name="Linha" id="crazypac/Linha#Linha()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Linha" id="crazypac/Linha#Linha(IIIIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Linha" id="crazypac/Linha#Linha(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="colideComLinha" id="crazypac/Linha#colideComLinha(IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="desenhaLinha" id="crazypac/Linha#desenhaLinha(Ljavax.microedition.lcdui.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHeight" id="crazypac/Linha#getHeight()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWidth" id="crazypac/Linha#getWidth()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getX" id="crazypac/Linha#getX()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getX2" id="crazypac/Linha#getX2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getY" id="crazypac/Linha#getY()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getY2" id="crazypac/Linha#getY2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pegaPontoHor" id="crazypac/Linha#pegaPontoHor(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pegaPontoVer" id="crazypac/Linha#pegaPontoVer(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setHeight" id="crazypac/Linha#setHeight(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setWidth" id="crazypac/Linha#setWidth(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setX" id="crazypac/Linha#setX(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setX2" id="crazypac/Linha#setX2(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setY" id="crazypac/Linha#setY(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setY2" id="crazypac/Linha#setY2(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.0 //@children.4/@sourceConnections.1 //@children.9/@sourceConnections.1 //@children.1/@sourceConnections.1" name="Jogo" location="1400,1643" size="366,673" id="crazypac/Jogo" runTimeClassModel="adicionaComandos(),sendMsg(Ljava.lang.String;),inputClient(),Jogo(),pacmanMove,oldKeyStates,isServer,inputServer(),faseAtual,contador,stop(),commandBack,isPlay,run(),isServer(Z),receiveMessage([B),instance,errorOnReceiving(Ljava.io.IOException;),defineFase(),drawScreen(Ljavax.microedition.lcdui.Graphics;),fases,criaPacman(),getInstance(),inicia(),sendPosition(),commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;),newInstance(),mensagemDesconectou(),errorOnSending(Ljava.io.IOException;),threadSleep,pacman,pegouBolinha,pacmanColide(II[Lcrazypac.Linha;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="142,198">
+      <children xsi:type="editmodel:AttributeEditModel" name="commandBack" id="crazypac/Jogo#commandBack"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="contador" id="crazypac/Jogo#contador"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="faseAtual" id="crazypac/Jogo#faseAtual"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fases" id="crazypac/Fase@fases+crazypac/Jogo@|crazypac/Fase#fases"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="instance" id="crazypac/Jogo#instance"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="isPlay" id="crazypac/Jogo#isPlay"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="isServer" id="crazypac/Jogo#isServer"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="oldKeyStates" id="crazypac/Jogo#oldKeyStates"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pacman" id="crazypac/Jogo#pacman"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pacmanMove" id="crazypac/Jogo#pacmanMove"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pegouBolinha" id="crazypac/Jogo#pegouBolinha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="threadSleep" id="crazypac/Jogo#threadSleep"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="343,378">
+      <children xsi:type="editmodel:MethodEditModel" name="Jogo" id="crazypac/Jogo#Jogo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaComandos" id="crazypac/Jogo#adicionaComandos()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="commandAction" id="crazypac/Jogo#commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="criaPacman" id="crazypac/Jogo#criaPacman()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="defineFase" id="crazypac/Jogo#defineFase()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drawScreen" id="crazypac/Jogo#drawScreen(Ljavax.microedition.lcdui.Graphics;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="errorOnReceiving" id="crazypac/Jogo#errorOnReceiving(Ljava.io.IOException;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="errorOnSending" id="crazypac/Jogo#errorOnSending(Ljava.io.IOException;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="crazypac/Jogo#getInstance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inicia" id="crazypac/Jogo#inicia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inputClient" id="crazypac/Jogo#inputClient()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inputServer" id="crazypac/Jogo#inputServer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isServer" id="crazypac/Jogo#isServer(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mensagemDesconectou" id="crazypac/Jogo#mensagemDesconectou()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="newInstance" id="crazypac/Jogo#newInstance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pacmanColide" id="crazypac/Jogo#pacmanColide(II[Lcrazypac.Linha;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="receiveMessage" id="crazypac/Jogo#receiveMessage([B)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" id="crazypac/Jogo#run()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sendMsg" id="crazypac/Jogo#sendMsg(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sendPosition" id="crazypac/Jogo#sendPosition()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="stop" id="crazypac/Jogo#stop()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Jogo->crazypac/Fase" source="//@children.8" target="//@children.11" targetEnd="//@children.8/@sourceConnections.0/@children.2" label="//@children.8/@sourceConnections.0/@children.0" sourceEnd="//@children.8/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="377,856"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Jogo->crazypac/TelaInicial" source="//@children.8" target="//@children.4" targetEnd="//@children.8/@sourceConnections.1/@children.2" label="//@children.8/@sourceConnections.1/@children.0" sourceEnd="//@children.8/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="298,673" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="67,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Jogo->crazypac/CrazyPac" source="//@children.8" target="//@children.5" targetEnd="//@children.8/@sourceConnections.2/@children.2" label="//@children.8/@sourceConnections.2/@children.0" sourceEnd="//@children.8/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="366,663" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Jogo->crazypac/Linha" source="//@children.8" target="//@children.7" targetEnd="//@children.8/@sourceConnections.3/@children.2" label="//@children.8/@sourceConnections.3/@children.0" sourceEnd="//@children.8/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="366,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,529"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Jogo->crazypac/Colisao" source="//@children.8" target="//@children.2" targetEnd="//@children.8/@sourceConnections.4/@children.2" label="//@children.8/@sourceConnections.4/@children.0" sourceEnd="//@children.8/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="220,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="144,151"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/Jogo->crazypac/SpriteDir" source="//@children.8" target="//@children.10" targetEnd="//@children.8/@sourceConnections.5/@children.2" label="//@children.8/@sourceConnections.5/@children.0" sourceEnd="//@children.8/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,180" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="348,137"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Jogo->crazypac/SpriteDir" source="//@children.8" target="//@children.10" targetEnd="//@children.8/@sourceConnections.6/@children.2" label="//@children.8/@sourceConnections.6/@children.0" sourceEnd="//@children.8/@sourceConnections.6/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,166" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="348,147"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/Jogo->crazypac/Fase" source="//@children.8" target="//@children.11" targetEnd="//@children.8/@sourceConnections.7/@children.2" label="//@children.8/@sourceConnections.7/@children.0" sourceEnd="//@children.8/@sourceConnections.7/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,59" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="377,867"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="MenuJogar" location="1150,2465" size="423,295" id="crazypac/MenuJogar" runTimeClassModel="getInstance(),inquiryCompleted([Ljavax.bluetooth.RemoteDevice;),deviceDiscovered(Ljavax.bluetooth.RemoteDevice;Ljavax.bluetooth.DeviceClass;),comandoSair,commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;),newInstance(),deviceList,errorOnConnection(Ljava.io.IOException;),inquiryError(),connectionEstablished(Lnet.java.dev.marge.entity.ServerDevice;Ljavax.bluetooth.RemoteDevice;),instance,MenuJogar()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="135,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="comandoSair" id="crazypac/MenuJogar#comandoSair"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="deviceList" id="crazypac/MenuJogar#deviceList"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="instance" id="crazypac/MenuJogar#instance"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="400,162">
+      <children xsi:type="editmodel:MethodEditModel" name="MenuJogar" id="crazypac/MenuJogar#MenuJogar()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="commandAction" id="crazypac/MenuJogar#commandAction(Ljavax.microedition.lcdui.Command;Ljavax.microedition.lcdui.Displayable;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="connectionEstablished" id="crazypac/MenuJogar#connectionEstablished(Lnet.java.dev.marge.entity.ServerDevice;Ljavax.bluetooth.RemoteDevice;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="deviceDiscovered" id="crazypac/MenuJogar#deviceDiscovered(Ljavax.bluetooth.RemoteDevice;Ljavax.bluetooth.DeviceClass;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="errorOnConnection" id="crazypac/MenuJogar#errorOnConnection(Ljava.io.IOException;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="crazypac/MenuJogar#getInstance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inquiryCompleted" id="crazypac/MenuJogar#inquiryCompleted([Ljavax.bluetooth.RemoteDevice;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inquiryError" id="crazypac/MenuJogar#inquiryError()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="newInstance" id="crazypac/MenuJogar#newInstance()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/MenuJogar->crazypac/TelaInicial" source="//@children.9" target="//@children.4" targetEnd="//@children.9/@sourceConnections.0/@children.2" label="//@children.9/@sourceConnections.0/@children.0" sourceEnd="//@children.9/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="413,295" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/MenuJogar->crazypac/Jogo" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.1/@children.2" label="//@children.9/@sourceConnections.1/@children.0" sourceEnd="//@children.9/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="336,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="86,673"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/MenuJogar->crazypac/DevicesList" source="//@children.9" target="//@children.1" targetEnd="//@children.9/@sourceConnections.2/@children.2" label="//@children.9/@sourceConnections.2/@children.0" sourceEnd="//@children.9/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="423,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,241"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/MenuJogar->crazypac/DevicesList" source="//@children.9" target="//@children.1" targetEnd="//@children.9/@sourceConnections.3/@children.2" label="//@children.9/@sourceConnections.3/@children.0" sourceEnd="//@children.9/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="422,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,251"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/MenuJogar->crazypac/CrazyPac" source="//@children.9" target="//@children.5" targetEnd="//@children.9/@sourceConnections.4/@children.2" label="//@children.9/@sourceConnections.4/@children.0" sourceEnd="//@children.9/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="423,196" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,98"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.4 //@children.11/@sourceConnections.5 //@children.8/@sourceConnections.5 //@children.8/@sourceConnections.6" name="SpriteDir" location="230,1662" size="348,295" id="crazypac/SpriteDir" runTimeClassModel="getDir(),SpriteDir(Ljavax.microedition.lcdui.Image;C),setX(I),SpriteDir(Ljavax.microedition.lcdui.game.Sprite;),SpriteDir(Ljavax.microedition.lcdui.game.Sprite;C),SpriteDir(Ljavax.microedition.lcdui.Image;IIC),dir,SpriteDir(Ljavax.microedition.lcdui.Image;),setDir(C),SpriteDir(Ljavax.microedition.lcdui.Image;II),setY(I),getImage(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="59,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="dir" id="crazypac/SpriteDir#dir"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="325,198">
+      <children xsi:type="editmodel:MethodEditModel" name="SpriteDir" id="crazypac/SpriteDir#SpriteDir(Ljavax.microedition.lcdui.Image;II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="SpriteDir" id="crazypac/SpriteDir#SpriteDir(Ljavax.microedition.lcdui.Image;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="SpriteDir" id="crazypac/SpriteDir#SpriteDir(Ljavax.microedition.lcdui.game.Sprite;C)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="SpriteDir" id="crazypac/SpriteDir#SpriteDir(Ljavax.microedition.lcdui.Image;C)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="SpriteDir" id="crazypac/SpriteDir#SpriteDir(Ljavax.microedition.lcdui.Image;IIC)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="SpriteDir" id="crazypac/SpriteDir#SpriteDir(Ljavax.microedition.lcdui.game.Sprite;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDir" id="crazypac/SpriteDir#getDir()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getImage" id="crazypac/SpriteDir#getImage(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDir" id="crazypac/SpriteDir#setDir(C)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setX" id="crazypac/SpriteDir#setX(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setY" id="crazypac/SpriteDir#setY(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.12/@sourceConnections.0 //@children.8/@sourceConnections.0 //@children.8/@sourceConnections.7" name="Fase" location="789,854" size="377,925" id="crazypac/Fase" runTimeClassModel="adicionaParedes(IIII),movimentaFantasmasAutomaticos(),adicionaBolinhas(Ljavax.microedition.lcdui.game.Sprite;II),paredes,bolinhas,numFantasmas(),recuperaFantasmas(),adicionaBolinhas(II),setEstadoFantasmas(Z),estadoFantasmas,fantasmasRemovidos,getPosicaoFantasmas(),adicionaParedes(Lcrazypac.Linha;),apagaFantasmas(I),setPosicaoFantasmas(Ljava.lang.String;),fantasmaCliente,getHeight(),height,getFantasmaCliente(),getEstadoFantasmas(),modificaDir(C),setWidth(I),getWidth(),canto,movimentaFantasmas(I),getFantasma(I),adicionaFantasmas([Lcrazypac.SpriteDir;),adicionaParedes([Lcrazypac.Linha;),modificaFantasma(ILcrazypac.SpriteDir;),width,random,existeFantasmas(),setHeight(I),movimentaFantasmas(),movimentoRandomico,getBolinhas(),apagaBolinhas(I),defineEstadoFantasmas(Z),fantasmas,getFantasmas(),bolinhasRemovidas,desenha(Ljavax.microedition.lcdui.Graphics;I),getParedes(),adicionaFantasmas(Lcrazypac.SpriteDir;II),Fase(II),adicionaFantasmas(II),movimentaFantasma(III)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="174,216">
+      <children xsi:type="editmodel:AttributeEditModel" name="bolinhas" id="crazypac/Fase#bolinhas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bolinhasRemovidas" id="crazypac/Fase#bolinhasRemovidas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="canto" id="crazypac/Fase#canto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="estadoFantasmas" id="crazypac/Fase#estadoFantasmas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fantasmaCliente" id="crazypac/Fase#fantasmaCliente"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fantasmas" id="crazypac/Fase#fantasmas"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fantasmasRemovidos" id="crazypac/Fase#fantasmasRemovidos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="height" id="crazypac/Fase#height"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="movimentoRandomico" id="crazypac/Fase#movimentoRandomico"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="paredes" id="crazypac/Fase#paredes"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="random" id="crazypac/Fase#random"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="width" id="crazypac/Fase#width"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="354,630">
+      <children xsi:type="editmodel:MethodEditModel" name="Fase" id="crazypac/Fase#Fase(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaBolinhas" id="crazypac/Fase#adicionaBolinhas(Ljavax.microedition.lcdui.game.Sprite;II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaBolinhas" id="crazypac/Fase#adicionaBolinhas(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaFantasmas" id="crazypac/Fase#adicionaFantasmas(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaFantasmas" id="crazypac/Fase#adicionaFantasmas([Lcrazypac.SpriteDir;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaFantasmas" id="crazypac/Fase#adicionaFantasmas(Lcrazypac.SpriteDir;II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaParedes" id="crazypac/Fase#adicionaParedes([Lcrazypac.Linha;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaParedes" id="crazypac/Fase#adicionaParedes(IIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="adicionaParedes" id="crazypac/Fase#adicionaParedes(Lcrazypac.Linha;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="apagaBolinhas" id="crazypac/Fase#apagaBolinhas(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="apagaFantasmas" id="crazypac/Fase#apagaFantasmas(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="defineEstadoFantasmas" id="crazypac/Fase#defineEstadoFantasmas(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="desenha" id="crazypac/Fase#desenha(Ljavax.microedition.lcdui.Graphics;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="existeFantasmas" id="crazypac/Fase#existeFantasmas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getBolinhas" id="crazypac/Fase#getBolinhas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEstadoFantasmas" id="crazypac/Fase#getEstadoFantasmas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFantasma" id="crazypac/Fase#getFantasma(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFantasmaCliente" id="crazypac/Fase#getFantasmaCliente()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getFantasmas" id="crazypac/Fase#getFantasmas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHeight" id="crazypac/Fase#getHeight()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getParedes" id="crazypac/Fase#getParedes()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPosicaoFantasmas" id="crazypac/Fase#getPosicaoFantasmas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWidth" id="crazypac/Fase#getWidth()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="modificaDir" id="crazypac/Fase#modificaDir(C)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="modificaFantasma" id="crazypac/Fase#modificaFantasma(ILcrazypac.SpriteDir;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movimentaFantasma" id="crazypac/Fase#movimentaFantasma(III)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movimentaFantasmas" id="crazypac/Fase#movimentaFantasmas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movimentaFantasmas" id="crazypac/Fase#movimentaFantasmas(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movimentaFantasmasAutomaticos" id="crazypac/Fase#movimentaFantasmasAutomaticos()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="numFantasmas" id="crazypac/Fase#numFantasmas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="recuperaFantasmas" id="crazypac/Fase#recuperaFantasmas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEstadoFantasmas" id="crazypac/Fase#setEstadoFantasmas(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setHeight" id="crazypac/Fase#setHeight(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPosicaoFantasmas" id="crazypac/Fase#setPosicaoFantasmas(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setWidth" id="crazypac/Fase#setWidth(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="crazypac/Fase@fases+crazypac/Jogo@" source="//@children.11" target="//@children.8" targetEnd="//@children.11/@sourceConnections.0/@children.2" label="//@children.11/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="fases" location="377,847" id="crazypac/Fase@fases+crazypac/Jogo@|crazypac/Fase#fases" attachSource="true" multiplicityLabel="//@children.11/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.11/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - fases" location="1173,1681" size="38,13" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="1173,1708" size="4,13" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,80" id="crazypac/Fase@fases+crazypac/Jogo@|crazypac/Jogo#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/Fase->crazypac/ArrayList" source="//@children.11" target="//@children.3" targetEnd="//@children.11/@sourceConnections.1/@children.2" label="//@children.11/@sourceConnections.1/@children.0" sourceEnd="//@children.11/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-1,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="281,485"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Fase->crazypac/ArrayList" source="//@children.11" target="//@children.3" targetEnd="//@children.11/@sourceConnections.2/@children.2" label="//@children.11/@sourceConnections.2/@children.0" sourceEnd="//@children.11/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="281,475"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Fase->crazypac/Colisao" source="//@children.11" target="//@children.2" targetEnd="//@children.11/@sourceConnections.3/@children.2" label="//@children.11/@sourceConnections.3/@children.0" sourceEnd="//@children.11/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="377,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,151"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="crazypac/Fase->crazypac/SpriteDir" source="//@children.11" target="//@children.10" targetEnd="//@children.11/@sourceConnections.4/@children.2" label="//@children.11/@sourceConnections.4/@children.0" sourceEnd="//@children.11/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,866" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="348,65"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Fase->crazypac/SpriteDir" source="//@children.11" target="//@children.10" targetEnd="//@children.11/@sourceConnections.5/@children.2" label="//@children.11/@sourceConnections.5/@children.0" sourceEnd="//@children.11/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,866" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="345,58"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="crazypac/Fase->crazypac/Linha" source="//@children.11" target="//@children.7" targetEnd="//@children.11/@sourceConnections.6/@children.2" label="//@children.11/@sourceConnections.6/@children.0" sourceEnd="//@children.11/@sourceConnections.6/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,13" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="377,225" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,303"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Fase1" location="877,1829" size="201,97" id="crazypac/Fase1" runTimeClassModel="Fase1(II)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="178,18">
+      <children xsi:type="editmodel:MethodEditModel" name="Fase1" id="crazypac/Fase1#Fase1(II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="crazypac/Fase&lt;-crazypac/Fase1" source="//@children.12" target="//@children.11" targetEnd="//@children.12/@sourceConnections.0/@children.1" sourceEnd="//@children.12/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="100,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="188,925"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterlas="true"/>
+</editmodel:ClassDiagramEditModel>
