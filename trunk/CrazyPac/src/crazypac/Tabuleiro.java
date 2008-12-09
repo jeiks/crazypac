@@ -1,5 +1,7 @@
 package crazypac;
 
+import java.io.IOException;
+
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Displayable;
@@ -33,7 +35,7 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	 */
 	private int oldKeyStates = 0;
 	
-	Tabuleiro(CrazyPac pai) {
+	public Tabuleiro(CrazyPac pai) {
 		super(true);
 		this.pai = pai;
 		delay = 20;
@@ -232,4 +234,5 @@ public class Tabuleiro extends GameCanvas implements Runnable,CommandListener {
 	public void stop(){
 		isPlay = false;
 	}
+
 }
