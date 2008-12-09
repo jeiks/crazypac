@@ -18,13 +18,24 @@ import net.java.dev.marge.inquiry.DeviceDiscoverer;
 import net.java.dev.marge.inquiry.ServiceDiscoverer;
 import net.java.dev.marge.inquiry.ServiceSearchListener;
 
+/**
+ * Classe que demonstra a lista de dispositivos bluetooth
+ * encontrados na pesquisa do cliente
+ * 
+ * adaptado por Jacson RC Silva da classe encontrada nos
+ * exemplos do Projeto Marge
+ */
 public class DevicesList extends List
 implements CommandListener, ServiceSearchListener {
 
     private Command comandoSelecionar;
     private Command comandoVoltar;
     private Vector remoteDevices;
-		
+	
+    /**
+     * Construtor padrão que define os comandos
+     * da interface da lista de dispositivos
+     */
 	public DevicesList() {
 		super("Encontrar dispositivos", List.IMPLICIT);
 	    comandoSelecionar = new Command("Selecionar", Command.SCREEN, 1);
@@ -35,6 +46,10 @@ implements CommandListener, ServiceSearchListener {
         this.setCommandListener(this);
 	}
 
+	/**
+	 * método para adicionar um dispositivo à lista
+	 * @param remoteDevice
+	 */
     public void addRemoteDevice(RemoteDevice remoteDevice) {
         remoteDevices.addElement(remoteDevice);
         try {
@@ -44,6 +59,9 @@ implements CommandListener, ServiceSearchListener {
         }
     }
 	
+    /**
+     * método que recebe os comandos do usuário
+     */
 	public void commandAction(Command cmd, Displayable arg1) {
 		if (cmd == comandoVoltar) {
 			try {
@@ -63,10 +81,18 @@ implements CommandListener, ServiceSearchListener {
 		}
 	}
 
+	/**
+	 * método de debug
+	 * utilizado ao não encontrar um dispositivo
+	 */
 	public void deviceNotReachable() {
 		System.out.println("deviceNotReachable");
 	}
 
+	/**
+	 * método chamado quando completa-se a pesquisa
+	 * por dispositivos
+	 */
 	public void serviceSearchCompleted(RemoteDevice arg0, ServiceRecord[] arg1) {
 		try {
             ClientConfiguration clientConfiguration = new ClientConfiguration(arg1[0], Jogo.getInstance());
@@ -80,6 +106,10 @@ implements CommandListener, ServiceSearchListener {
         }
 	}
 
+	/**
+	 * método de debug para erro de pesquisa
+	 * de dispositivos
+	 */
 	public void serviceSearchError() {
 		System.out.println("serviceSearchError");
 	}

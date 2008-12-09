@@ -1,6 +1,6 @@
 package crazypac;
 /**
- * Implementação adiquirida em:
+ * Implementação do ArrayList adiquirida em:
  * http://www.guj.com.br/posts/list/93767.java
  * @author Norxs
  */

@@ -1,7 +1,6 @@
 package crazypac;
 
 import java.io.IOException;
-
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Displayable;
@@ -10,15 +9,31 @@ import javax.microedition.lcdui.Image;
 import javax.microedition.lcdui.ImageItem;
 import javax.microedition.midlet.MIDletStateChangeException;
 
+/**
+ * Classe que implementa a tela inicial do jogo com a opção de jogar e sair.
+ * @author  Jacson RC Silva
+ */
 public class TelaInicial extends Form
 implements CommandListener {
 
+	/**
+	 * imagem padrão do CrazyPac
+	 */
 	private Image imgPacMan;
 
-	private Command comandoJogar,comandoSair;
-	
+	private Command comandoJogar;
+	private Command comandoSair;
+
+	/**
+	 * padrão de projeto Singleton
+	 * Instância do jogo
+	 */
 	private static TelaInicial instance;
 	
+	/**
+	 * Construtor padrão
+	 * responsável por criar a tela inicial
+	 */
 	private TelaInicial() {
 		super("");
 		comandoSair = new Command("Sair",Command.EXIT, 0);
@@ -39,12 +54,21 @@ implements CommandListener {
 		append(pacMan);	
 	}
 	
+	/**
+	 * padrão de projeto Singleton.
+	 * Instância do jogo.
+	 * @return a instância
+	 * @uml.property  name="instance"
+	 */
 	public synchronized static TelaInicial getInstance() {
 		if ( instance == null )
 			instance = new TelaInicial();
 		return instance;
 	}
 	
+	/**
+	 * recebe os comandos do usuário
+	 */
 	public void commandAction(Command cmd, Displayable arg1) {
 		if (cmd == comandoSair) {
 			try {

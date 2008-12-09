@@ -2,6 +2,10 @@ package crazypac;
 
 import javax.microedition.lcdui.game.Sprite;
 
+/**
+ * Verifica a colis„o entre Sprites e Linhas
+ * @author Jacson RC Silva
+ */
 public class Colisao {
 	
 	Colisao() {};
@@ -24,7 +28,7 @@ public class Colisao {
 	
 
 	/**
-	 * Verifica a colis√£o entre duas retas
+	 * Verifica a colis„o entre duas linhas
 	 * @param pX
 	 * @param pY
 	 * @param pX2
@@ -46,7 +50,7 @@ public class Colisao {
 	
 	/**
 	 * verifica a colisao entre um desenho e as linhas que
-	 * comp√µem o vetor
+	 * compıem o vetor do par‚metro "linhas"
 	 * @param nextX
 	 * @param nextY
 	 * @param width
